@@ -1,0 +1,275 @@
+/* Variables */
+
+:root {
+    --text-bright: #fff;
+    --text-dark: #2e3032;
+    --accent-color: #98c000;
+    --light-color: #99aecc;
+    --medium-color: #204e6e;
+    --dark-color: #00253d;
+    --background-color: #161616;
+}
+
+* {
+    margin: 0;
+    padding: 0;   
+}
+
+html, body {
+    font-family: 'GrandSlang Roman';
+    background: var(--background-color);
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+}
+
+/* Fonts */
+
+@font-face {
+    font-family: 'GrandSlang Roman';
+    src: url("Fonts/GrandSlang\ Roman.otf") format("opentype");
+}
+
+/* Menu */
+
+.menu-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+.block {
+    position: fixed;
+    width: 0%;
+    height: 100vh;
+    background: rgba(22, 22, 22, 0.85);
+    z-index: 100;
+}
+
+.b1 {
+    left: 0;
+}
+
+.b2 {
+    left: 25%;
+}
+
+.b3 {
+    left: 50%;
+}
+
+.b4 {
+    left: 75%;
+}
+
+.strip {
+    position: fixed;
+    width: 1px;
+    height: 100vh;
+    background: rgba(256, 256, 256, 0.1);
+}
+
+.one {
+    left: 25%;
+}
+
+.two {
+    left: 50%;
+}
+
+.three {
+    left: 75%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 200;
+    list-style: none;
+}
+
+li {
+    padding: 12px 0;
+    color: var(--text-bright);
+    font-size: 36px;
+    font-weight: 500;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all .5s ease-in-out;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* Hamburger Menu */
+
+.menu-btn {
+    position: fixed;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 300;
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger {
+    width: 30px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 4px;
+    transition: all .5s ease-in-out;
+    padding-left: 6px;
+    box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.35);
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: var(--text-bright);
+    border-radius: 4px;
+    transition: all .5s ease-in-out;
+    box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.35);
+}
+
+.menu-btn__burger::before {
+    transform: translateY(-12px);
+}
+
+.menu-btn__burger::after {
+    transform: translateY(12px);
+}
+
+/* Hamburger animation */
+
+.menu-btn.open .menu-btn__burger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+/* Logo */
+
+.logo {
+    height: 50px;
+    position: fixed;
+    z-index: 400;
+}
+
+/* Hero section */
+
+.hero {
+    background: url(/Images/Galleries/Hero.jpg) no-repeat 50% 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+.facilities {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    color: var(--text-bright);
+    background: var(--dark-color);
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    color: var(--text-bright);
+    background: var(--medium-color);
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    color: var(--text-dark);
+    background: var(--light-color);
+}
+
+.pricing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    color: var(--text-bright);
+    background: var(--dark-color);
+}
+
+.why-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    color: var(--text-bright);
+    background: var(--medium-color);
+}
+
+.testimonials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    color: var(--text-dark);
+    background: var(--light-color);
+}
+
+
+
+
+
+
+
+
+/* Media */
+
+@media screen and (min-width: 480px) {
+    .menu-btn {
+        margin: 40px 80px;
+    }
+    .logo {
+        transform: translate(-50%, -50%);
+        top: 55px;
+        left: 50%;
+
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .menu-btn {
+        margin: 20px 20px;
+    }
+    .logo {
+        top: 10px;
+        right: 20px;
+    }
+}
